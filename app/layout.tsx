@@ -23,10 +23,6 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "After Chat — Browser Agent UI Lab",
     description:
       "A research-backed UI lab exploring three alternatives to the browser agent chat box.",
-    icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
-    },
     openGraph: {
       title: "After Chat",
       description: "Three browser-agent interfaces beyond the chat box.",
