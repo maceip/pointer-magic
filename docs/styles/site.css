@@ -1,0 +1,331 @@
+:root {
+  --bg0: #0b0d10;
+  --bg1: #12161c;
+  --ink: #eef2f6;
+  --muted: #9aa6b2;
+  --line: rgba(238, 242, 246, 0.12);
+  --accent: #c7d2fe;
+  --metal: #d8dee8;
+  --ok: #9ee6c5;
+  --warn: #f0d59a;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  background:
+    radial-gradient(1200px 700px at 70% -10%, rgba(167, 139, 250, 0.16), transparent 55%),
+    radial-gradient(900px 500px at 10% 20%, rgba(94, 234, 212, 0.1), transparent 50%),
+    linear-gradient(180deg, var(--bg0), var(--bg1) 45%, #0a0c0f);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.wrap {
+  width: min(1080px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  padding: 4rem 0 3rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.mark {
+  width: min(420px, 72vw);
+  height: auto;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45));
+  animation: rise 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.brand {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: clamp(2.8rem, 7vw, 4.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  animation: rise 1.1s 0.08s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.lede {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+  animation: rise 1.1s 0.16s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+  animation: rise 1.1s 0.24s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-weight: 560;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #e8eef8, #b7c4d8);
+  color: #11151a;
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  color: #11151a;
+  background: linear-gradient(135deg, #fff, #cdd7e6);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--ink);
+}
+
+section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  letter-spacing: -0.02em;
+}
+
+.section-lede {
+  max-width: 40rem;
+  margin: 0 0 2rem;
+  color: var(--muted);
+}
+
+.steps {
+  display: grid;
+  gap: 1rem;
+  counter-reset: step;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #111;
+  background: var(--metal);
+}
+
+.step h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cases {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 860px) {
+  .cases {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.case {
+  padding: 1.4rem 1.35rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%),
+    rgba(0, 0, 0, 0.18);
+}
+
+.case .eyebrow {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ok);
+}
+
+.case.case-b .eyebrow {
+  color: var(--warn);
+}
+
+.case h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+}
+
+.case p {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+}
+
+.case ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink);
+}
+
+.case li + li {
+  margin-top: 0.35rem;
+}
+
+pre {
+  margin: 1rem 0 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border-radius: 0.9rem;
+  border: 1px solid var(--line);
+  background: #07090c;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.note {
+  margin-top: 1.25rem;
+  padding: 0.95rem 1.1rem;
+  border-left: 3px solid rgba(199, 210, 254, 0.55);
+  background: rgba(199, 210, 254, 0.06);
+  color: var(--muted);
+}
+
+.grid-2 {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tile {
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tile h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.tile p {
+  margin: 0;
+  color: var(--muted);
+}
+
+footer {
+  padding: 2.5rem 0 3.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark,
+  .brand,
+  .lede,
+  .cta-row {
+    animation: none;
+  }
+}

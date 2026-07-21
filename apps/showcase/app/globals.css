@@ -1919,7 +1919,7 @@ select:focus-visible {
   }
 }
 
-/* Magic Pointer lab: shared shell */
+/* Pointer Magic lab: shared shell */
 
 .pointer-lab {
   --pointer-navy: #132138;
@@ -2833,7 +2833,7 @@ button.data-row { cursor: crosshair; }
 }
 
 /* ========================================================================== */
-/* Magic Pointer lab: Timefold, Source X-Ray, and Afterimage                  */
+/* Pointer Magic lab: Timefold, Source X-Ray, and Afterimage                  */
 /* Appended as an isolated block so the original showcase remains untouched. */
 /* ========================================================================== */
 

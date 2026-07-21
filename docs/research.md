@@ -19,6 +19,4 @@ do not consider the above list exhaustive -- we only wanted to give you a place 
 the openai atlas browser, perplexities comet browser, and The Browser Company's Dia all failed. users dont always know what they want to automate or hand over in a browser. simply attaching a chat box and a pages
 dom to an agent and a LLM -- has proven to be a failure because a) humans dont trust it, b) its slower than humans, c) the guardrails added reduce the utility (claude-chrome wont help me make a transfer on paypal.com) 
 
-ingredients you can use: chrome extension, native apps, cloud proxy/backend, any aws/azure cloud capability. this mac has 128GB and an M5 chip -- and again we do not want you to veer too far in the agent/harness REPL / loop / toolcalling / fine tuning space, this is a ux / ui adventure. we have some light research docs you can review in ~/practical_
-
-~/ practical_take_v2_implementation_spec.md  practical_take_v2.md                      practical_take.md
+ingredients you can use: chrome extension, native apps, cloud proxy/backend, any aws/azure cloud capability. again we do not want you to veer too far in the agent/harness REPL / loop / toolcalling / fine tuning space, this is a ux / ui adventure.

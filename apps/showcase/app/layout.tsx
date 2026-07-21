@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Magic Pointer Lab — Five Working Experiments",
+  title: "Pointer Magic Lab — Five Working Experiments",
   description:
     "Five working pointer experiments across relationships, patterns, time, evidence, and memory.",
 };

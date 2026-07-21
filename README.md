@@ -1,56 +1,95 @@
-# Magic Pointer
+<p align="center">
+  <img src="docs/assets/pointer-magic-mark.png" alt="Pointer Magic" width="320" />
+</p>
 
-This repository contains the complete Magic Pointer work: the product research,
-interactive browser experiments, native macOS pointer foundation, proactive scene
-discovery, and revisioned scene memory.
+<h1 align="center">Pointer Magic</h1>
 
-## Repository map
+<p align="center">
+  A small app for your Mac that sits next to the real mouse pointer.<br />
+  It can show which coding agent is ready, or show simple context for what is under the pointer.
+</p>
 
-- `apps/showcase/` — local interactive browser research. The main page contains
-  five Magic Pointer experiments; `/after-chat` preserves the earlier Intent Halo,
-  Shadow Run, and Apprentice Relay study.
-- `apps/magic-pointer-macos/` — the native Swift package and app. macOS continues
-  to draw the real cursor; Magic Pointer observes it and draws separate companion
-  windows.
-- `docs/REPORT.md` — the Magic Pointer product assessment and five experiments.
-- `docs/research.md` — the earlier browser-agent research.
-- `docs/research-screens/` — the supplied Google mock and real-demo references.
+<p align="center">
+  <a href="https://maceip.github.io/webagent-ui/"><strong>Install guide</strong></a>
+  ·
+  <a href="#quick-start">Quick start</a>
+  ·
+  <a href="LICENSE">MIT license</a>
+</p>
 
-## Run the local showcase
+---
+
+## Who this is for
+
+| You | Start here |
+| --- | --- |
+| You run several local coding agents and lose track of who finished | Case 1 below |
+| You do not use a coding agent, but want a small shelf of context under the pointer | Case 2 below |
+| You want to add your own shelf content in code | See the shelf provider docs in the native app folder |
+
+You do not need a cloud account or an api key for the app itself.
+
+## What happens when you clone this
+
+1. Clone the repo on a Mac with macOS 14 or newer.
+2. Build the app with Swift. You need xcode or the apple command line tools.
+3. A menu bar icon appears. The app stays quiet until you grant permissions.
+4. You do not need a config file. Agents are found from the usual local folders on your Mac. Context under the pointer uses accessibility, and optional screen recording for on-device text reading.
+
+The goal for a first run is simple: build the app, grant permissions, then within a few minutes either see agent state or a context shelf when you pause the mouse.
+
+## Quick start
 
 ```bash
-cd apps/showcase
-npm install
-npm run dev
-```
-
-Open `http://127.0.0.1:5173`. The showcase has no sign-in, external hosting
-configuration, or third-party authentication dependency.
-
-## Run the native app
-
-```bash
-cd apps/magic-pointer-macos
-swift run MagicPointer
-```
-
-To assemble the app bundle instead:
-
-```bash
-cd apps/magic-pointer-macos
+git clone https://github.com/maceip/webagent-ui.git
+cd webagent-ui/apps/pointer-magic-macos
 ./scripts/build-app.sh --open
 ```
 
-The native implementation is deliberately layered:
+Then:
 
-1. Passive pointer capture and bounded event transport.
-2. Accessibility semantics and a click-through liquid-glass companion.
-3. Shake activation, the physical Right Option clutch, and a non-key interactive panel.
-4. Settled-pointer text and image perception.
-5. Proactive workspace, Accessibility, and dirty-region scene discovery.
-6. Identity, revision, invalidation, coverage, refresh, and transport contracts.
-7. Revisioned in-memory scene storage and bounded cache-first pointer queries.
+1. Find the pointer magic icon in the menu bar near the clock.
+2. Right-click the icon and choose request next permission. Do this again after each toggle in system settings.
+3. Leave pointer magic checked in the menu.
+4. Pause the pointer. You will not get a new system cursor. You may see a small companion shelf when there is something to show.
 
-The transport contracts include a seam for a future authenticated network source,
-but this repository does not contain or start a network client, listener, or remote
-runtime.
+Left-click the menu bar icon to park the shelf. Right-click for the menu. Click the parked shelf to use it. Use the dismiss control to hide that update.
+
+If you rebuild often and want permissions to stick to the same app identity, set the POINTER_MAGIC_CODESIGN_IDENTITY environment variable to your local apple development identity, then run the build script again with --open.
+
+## Two cases
+
+### Case 1. Which agent is ready
+
+Keep using ghostty, terminal, or cursor with your agents as usual. Install pointer magic and grant input monitoring and accessibility. Grant automation only if you want one click to jump to that agents terminal.
+
+You should see a small shelf with the agent provider, folder, and state as sessions appear or change. When something finishes or needs you, the shelf is a quick answer to which agent.
+
+Try parking the shelf, then clicking it to focus that agents terminal. That focus step only runs when you click.
+
+### Case 2. What is under my pointer
+
+Same install. Grant accessibility. Grant screen recording if you want on-device text reading. You do not need codex, claude, or cursor running.
+
+When the pointer settles over ordinary apps like mail, notes, or a browser, a shelf can show local context and simple actions from the built-in sample provider. Same app, different job.
+
+## Configuration
+
+Day one needs no configuration file.
+
+If you want to extend the shelf in code, read the shelf providers doc under apps/pointer-magic-macos/docs and the native readme in that folder. The core app does not start a network client or remote runtime.
+
+## Repository map
+
+- apps/pointer-magic-macos is the native mac app
+- docs/index.html is the github pages install guide
+- apps/showcase is an older browser lab, optional
+- apps/pointer-magic-macos/README.md has deeper native notes
+
+## Privacy
+
+Screen crops, on-device text reading, and agent session discovery stay on your Mac. Terminal focus runs only after you click a parked shelf. More detail is in SECURITY.md.
+
+## License
+
+MIT. See LICENSE.

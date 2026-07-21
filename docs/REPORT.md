@@ -1,4 +1,4 @@
-# Magic Pointer: Five Working Experiments
+# Pointer Magic: Five Working Experiments
 
 Date: 2026-07-10  
 Scope: what people see and do, how quickly the interface responds, what it remembers, and how it explains itself  
@@ -10,7 +10,7 @@ The next version should start with the pointer.
 
 People already point at the thing they are thinking about. That is much less work than opening a chat, describing the page, and explaining which object they mean. The pointer does not have to be right every time to be useful. It can begin as a fast, quiet feature that is occasionally very helpful. A wrong guess must be easy to ignore. A good guess must save more work than a button or keyboard shortcut.
 
-Google has already shown one strong version of this idea. Its experimental AI Pointer and announced Googlebook Magic Pointer can collect objects and use them in another place. We should not copy that demo. We should test five other jobs a pointer could do:
+Google has already shown one strong version of this idea. Its experimental AI Pointer and announced Googlebook Pointer Magic can collect objects and use them in another place. We should not copy that demo. We should test five other jobs a pointer could do:
 
 1. **Threadline** finds relationships between something on the page and information in another open context.
 2. **Pattern Brush** learns what a person means from a few marks and finds the rest.
@@ -83,15 +83,15 @@ Sources: [current Dia product](https://www.diabrowser.com/), [Dia security model
 
 Sources: [Disco and GenTabs announcement](https://blog.google/innovation-and-ai/models-and-research/google-labs/gentabs-gemini-3/), [Disco](https://labs.google/disco/).
 
-### Google AI Pointer and Googlebook Magic Pointer
+### Google AI Pointer and Googlebook Pointer Magic
 
 **Verified reference:** Google DeepMind's experimental demos let a person point at meaningful objects and use short phrases such as “this,” “that,” and “here.” The examples include doubling recipe ingredients into a shopping list, editing an image by indicating source and destination, merging document content, and turning a restaurant shown in a paused video into a booking flow.
 
-Googlebook's announced Magic Pointer mock-up collects two images, keeps small previews near the pointer, and offers actions including “Visualize Together,” “Compare Items,” and “Summarize.” Google describes Googlebook as a preview of devices planned for this fall. DeepMind describes its pointer work as experimental and says the public demo sequences were shortened. These are demonstrations of a direction, not proof of shipped speed, reliability, or adoption.
+Googlebook's announced Pointer Magic mock-up collects two images, keeps small previews near the pointer, and offers actions including “Visualize Together,” “Compare Items,” and “Summarize.” Google describes Googlebook as a preview of devices planned for this fall. DeepMind describes its pointer work as experimental and says the public demo sequences were shortened. These are demonstrations of a direction, not proof of shipped speed, reliability, or adoption.
 
 **Our inference:** the glow is not the important idea. Pointing can supply the missing noun in a request. Google has already shown object collection and transfer, so our work needs to explore other kinds of value. It should also show complete interactions rather than a shortened ideal path.
 
-Sources: [Google DeepMind AI Pointer](https://deepmind.google/blog/ai-pointer/), [Googlebook announcement and Magic Pointer video](https://blog.google/products-and-platforms/platforms/android/meet-googlebook/).
+Sources: [Google DeepMind AI Pointer](https://deepmind.google/blog/ai-pointer/), [Googlebook announcement and Pointer Magic video](https://blog.google/products-and-platforms/platforms/android/meet-googlebook/).
 
 ### Magentic-UI and MagenticLite
 

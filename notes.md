@@ -1,4 +1,4 @@
-# Magic Pointer Product Hypothesis
+# Pointer Magic Product Hypothesis
 
 The architectural description—“the mouse is a human-controlled context and routing
 layer”—is not itself a product. The product is a much more specific feedback loop.
@@ -18,7 +18,7 @@ The specific user story is:
 2. The developer opens the localhost or deployed application.
 3. They see that a button, animation, layout, or interaction is still wrong.
 4. They point at it and hold Right Option.
-5. Magic Pointer shows:
+5. Pointer Magic shows:
 
    ```text
    Chrome · localhost:5173 · toolbar button
@@ -108,9 +108,9 @@ Runtime
 
 Provenance
   Repository: webagent-ui
-  Worktree: /Users/mac/webagent-ui
+  Worktree: ~/src/webagent-ui
   Branch: main
-  Last relevant diff: MagicPointerInteractionController
+  Last relevant diff: PointerMagicInteractionController
   Owning objective: “move the companion below and closer”
   Implementing agent: pointer-layout
   Tester: browser-verifier

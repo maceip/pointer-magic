@@ -43,7 +43,7 @@ const evidence: { name: string; move: string; lesson: string; href: string; feat
     href: "https://blog.google/innovation-and-ai/models-and-research/google-labs/gentabs-gemini-3/",
   },
   {
-    name: "Google AI Pointer / Magic Pointer",
+    name: "Google AI Pointer / Pointer Magic",
     move: "Point at one or more things, then choose an action",
     lesson: "Pointing can replace part of a prompt. The cursor itself is no longer a new idea.",
     href: "https://deepmind.google/blog/ai-pointer/",

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pointer Magic — install and use</title>
+    <meta
+      name="description"
+      content="Pointer Magic is a local macOS menu bar app. See which coding agent is ready, or get a shelf of context under your pointer, without replacing the system cursor."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;560&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/site.css" />
+    <link rel="icon" href="assets/pointer-magic-mark.png" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap hero-inner">
+        <img
+          class="mark"
+          src="assets/pointer-magic-mark.png"
+          width="420"
+          height="290"
+          alt="Pointer Magic mark with a metal pointer, a small orb, and a fading shelf"
+        />
+        <h1 class="brand">Pointer Magic</h1>
+        <p class="lede">
+          A local mac app that rides beside your real cursor. No cloud account.
+          No cursor replacement. One menu bar app that can watch your coding
+          agents, or show context for whatever is under the pointer.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#install">Install on this Mac</a>
+          <a class="btn btn-ghost" href="#cases">Two ways to use it</a>
+          <a class="btn btn-ghost" href="https://github.com/maceip/webagent-ui">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="happens" class="wrap">
+        <h2>If you clone this today</h2>
+        <p class="section-lede">
+          There is no website signup and no setup wizard. You build a small
+          menu bar app on your Mac, grant permissions, and it starts watching
+          locally. That is intentional, and it is also what we need to explain
+          clearly for people who are not in a terminal agent all day.
+        </p>
+        <div class="grid-2">
+          <div class="tile">
+            <h3>What happens</h3>
+            <p>
+              After the build, pointer magic opens, a menu bar icon appears, and
+              the app sits quietly. Without permissions it cannot follow the
+              pointer well. Without coding agents, the agent shelf stays empty,
+              but the under-pointer context path can still work.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>What we want to happen</h3>
+            <p>
+              In under five minutes: build the app, grant permissions, then see
+              either your agents readiness or a shelf of local context when you
+              pause the pointer. No config file. No api keys for the core app.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="install" class="wrap">
+        <h2>Install</h2>
+        <p class="section-lede">
+          You need a Mac on macOS 14 or newer, and apples command line tools or
+          xcode so the swift command works. That is the only setup.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div>
+              <h3>Clone and build the app</h3>
+              <p>From terminal:</p>
+              <pre><code>git clone https://github.com/maceip/webagent-ui.git
+cd webagent-ui/apps/pointer-magic-macos
+./scripts/build-app.sh --open</code></pre>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Find the menu bar icon</h3>
+              <p>
+                Look for the pointer magic icon near the clock. Left-click parks
+                the shelf. Right-click opens the menu for permissions, on or off,
+                and quit.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Grant permissions one at a time</h3>
+              <p>
+                Open the menu and choose request next permission. Repeat after
+                each toggle in system settings. Usual order: input monitoring,
+                then accessibility, then screen recording. Automation is only
+                needed if you want click shelf to jump to that agents terminal.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Turn pointer magic on</h3>
+              <p>
+                In the menu, leave pointer magic checked. Move the mouse and
+                pause. You should not see a new system cursor, only an optional
+                companion shelf when there is something to show.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="note">
+          If you rebuild often and want permissions to keep the same app
+          identity, sign with your local development certificate using the
+          POINTER_MAGIC_CODESIGN_IDENTITY environment variable when you run
+          build-app.sh.
+        </p>
+      </section>
+
+      <section id="cases" class="wrap">
+        <h2>Two clear cases</h2>
+        <p class="section-lede">
+          Pick the story that matches how you work. You do not need both.
+        </p>
+        <div class="cases">
+          <article class="case case-a">
+            <p class="eyebrow">Case 1 · Agents</p>
+            <h3>Which agent is ready</h3>
+            <p>
+              You run several local coding agents such as codex, claude code, or
+              cursor. Pointer magic finds their sessions on disk and shows a
+              compact shelf with provider, folder, and state, so you can see who
+              finished, who is waiting, and whose state just changed.
+            </p>
+            <ul>
+              <li>Keep agents running in ghostty, terminal, or cursor as usual.</li>
+              <li>When a sessions state changes, the shelf updates while you work.</li>
+              <li>Click to park the shelf, then click it to focus that agents terminal.</li>
+              <li>No api keys inside pointer magic. It only reads local session files.</li>
+            </ul>
+          </article>
+          <article class="case case-b">
+            <p class="eyebrow">Case 2 · Everyone else</p>
+            <h3>What is under my pointer</h3>
+            <p>
+              You are not attached to a coding agent. You still get a local shelf
+              when the pointer settles: accessibility text, a small on-device crop
+              and text reading pass, and simple actions from the built-in sample
+              provider. Same app, different job.
+            </p>
+            <ul>
+              <li>Grant accessibility, and screen recording if you want text reading.</li>
+              <li>Pause over mail, notes, a browser, or any ordinary app.</li>
+              <li>When context is available, a shelf appears beside the cursor.</li>
+              <li>Park to click actions. Dismiss hides that exact update.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="configure" class="wrap">
+        <h2>Configuration</h2>
+        <p class="section-lede">
+          There is no day-one config file. Discovery uses the normal local
+          folders for codex, claude, and cursor. Providers are swift modules in
+          the app. See the native docs if you want to write your own shelf.
+        </p>
+        <div class="grid-2">
+          <div class="tile">
+            <h3>Built in, zero setup</h3>
+            <p>
+              The agent shelf and sample context provider start with the app. If
+              you have no agents, case 1 stays quiet and case 2 can still work.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>For people extending it</h3>
+            <p>
+              Read the shelf providers doc and the native package readme in the
+              github repo under apps/pointer-magic-macos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="wrap">
+        <h2>Privacy in one paragraph</h2>
+        <p class="section-lede">
+          Pointer magic does not ship a network client for its core loop. Crops
+          and on-device text reading stay on your Mac. Agent discovery reads
+          local session files and does not upload them. Terminal focus uses
+          apple events only after you click a parked shelf.
+        </p>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <p>
+        MIT licensed ·
+        <a href="https://github.com/maceip/webagent-ui">source</a> ·
+        <a href="https://github.com/maceip/webagent-ui/blob/main/SECURITY.md">security</a>
+      </p>
+    </footer>
+  </body>
+</html>

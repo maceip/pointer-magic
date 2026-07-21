@@ -8,5 +8,5 @@ apps/showcase/coverage/
 apps/showcase/next-env.d.ts
 apps/showcase/*.tsbuildinfo
 
-apps/magic-pointer-macos/.build/
+apps/pointer-magic-macos/.build/
 .swiftpm/

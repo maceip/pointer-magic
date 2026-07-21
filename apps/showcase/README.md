@@ -1,6 +1,6 @@
-# Magic Pointer local showcase
+# Pointer Magic local showcase
 
-This is the local browser research surface for Magic Pointer.
+This is the local browser research surface for Pointer Magic.
 
 - `/` — five working experiments: Threadline, Pattern Brush, Timefold, Source
   X-Ray, and Afterimage.
