@@ -22,7 +22,7 @@ The specific user story is:
 
    ```text
    Chrome · localhost:5173 · toolbar button
-   Build f528de3 · webagent-ui/main
+   Build f528de3 · pointer-magic/main
    Changed by Agent “pointer-layout” · 6 minutes ago
    Related: 1 diff · 1 console warning · tester has not verified
    ```
@@ -107,8 +107,8 @@ Runtime
   Interaction: pointer entered, click produced no navigation
 
 Provenance
-  Repository: webagent-ui
-  Worktree: ~/src/webagent-ui
+  Repository: pointer-magic
+  Worktree: ~/src/pointer-magic
   Branch: main
   Last relevant diff: PointerMagicInteractionController
   Owning objective: “move the companion below and closer”

@@ -10,11 +10,17 @@
 </p>
 
 <p align="center">
-  <a href="https://maceip.github.io/webagent-ui/"><strong>Install guide</strong></a>
+  <a href="https://maceip.github.io/pointer-magic/"><strong>Install guide</strong></a>
   ·
   <a href="#quick-start">Quick start</a>
   ·
   <a href="LICENSE">MIT license</a>
+</p>
+
+<p align="center"><em>One shelf. Every agent. Right under your hand.</em></p>
+
+<p align="center">
+  <video src="docs/demo/pointer-magic-demo.mp4" width="720" autoplay loop muted playsinline controls></video>
 </p>
 
 ---
@@ -41,8 +47,8 @@ The goal for a first run is simple: build the app, grant permissions, then withi
 ## Quick start
 
 ```bash
-git clone https://github.com/maceip/webagent-ui.git
-cd webagent-ui/apps/pointer-magic-macos
+git clone https://github.com/maceip/pointer-magic.git
+cd pointer-magic/apps/pointer-magic-macos
 ./scripts/build-app.sh --open
 ```
 
